@@ -72,3 +72,28 @@ function operate(a, b, op) {
       return b;
   }
 }
+// Adding Event Listeners for Clear Buttons
+const clearButton = document.getElementById("clear");
+const allClearButton = document.getElementById("all-clear");
+
+// All Clear : Reset Everything
+allClearButton.addEventListener("click", () => {
+  currentInput = "0";
+  operator = null;
+  waitingForSecondOperand = false;
+  updateDisplay();
+});
+// Clear : Remove last character
+clearButton.addEventListener("click", () => {
+  if (currentInput.length > 1) currentInput = currentInput.slice(0, -1);
+  else currentInput = "0";
+  updateDisplay();
+});
+const percentButton = document.getElementById("percent");
+percentButton.addEventListener("click", () => {
+  if (currentInput === "0") return;
+  else {
+    currentInput = (parseFloat(currentInput) / 100).toString();
+    updateDisplay();
+  }
+});
