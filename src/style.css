@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #54c9f3;
+  background-color: #66b5d2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,4 +29,32 @@ body {
 }
 .buttons {
   display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.btn {
+  padding: 20px;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: #333;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+.btn:hover {
+  background-color: #444;
+}
+.operator {
+  background-color: #ff9500;
+}
+.function {
+  background-color: #555;
+}
+.equal {
+  background-color: #28a745;
+  grid-column: span 1;
+}
+.zero {
+  grid-column: span 2;
 }
